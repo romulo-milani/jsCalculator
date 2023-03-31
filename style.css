@@ -34,7 +34,6 @@ div {
 }
 
 .screen {
-    /*background-color: rgb(124, 172, 133);*/
     background-color: rgb(134, 133, 136);
     box-sizing: border-box;
     width: 100%;
@@ -47,6 +46,19 @@ div {
     box-shadow: inset 0 0 10px rgb(37, 37, 37);
     color: white;
     font-size: 20px;
+}
+
+@media (max-width: 420px    ) {
+    .container {
+        width: 250px;
+    }
+}
+
+@media (max-width: 300px    ) {
+    .container {
+        width: 200px;
+        height: 420px;
+    }
 }
 
 .topBtns {
