@@ -34,7 +34,8 @@ div {
 }
 
 .screen {
-    background-color: rgb(124, 172, 133);
+    /*background-color: rgb(124, 172, 133);*/
+    background-color: rgb(134, 133, 136);
     box-sizing: border-box;
     width: 100%;
     height: 20%;
