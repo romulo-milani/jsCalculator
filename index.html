@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Inter:wght@500&family=Montserrat:wght@100&family=Poppins:wght@300&family=Press+Start+2P&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
     <title>JS Calculator</title>
 </head>
+
 <body>
+    <div class="container">
+        <div class="screen">
+            <p>1</p>
+            <p>+</p>
+            <p>3</p>
+        </div>
+        <div class="topBtns">
+            <button class="clear topbtn">Clear</button>
+            <button class="backspace topbtn">⌫</button>
+        </div>
+        <div class="bottombtns">
+            <div class="firstRow">
+                <button class="btn9 bottombtn">9</button>
+                <button class="btn8 bottombtn">8</button>
+                <button class="btn7 bottombtn">7</button>
+            </div>
+            <div class="secondRow">
+                <button class="btn6 bottombtn">6</button>
+                <button class="btn5 bottombtn">5</button>
+                <button class="btn4 bottombtn">4</button>
+            </div>
+            <div class="thirdRow">
+                <button class="btn3 bottombtn">3</button>
+                <button class="btn2 bottombtn">2</button>
+                <button class="btn1 bottombtn">1</button>
+            </div>
+            <div class="fourthRow">
+                <button class="btn0 bottombtn">0</button>
+                <button class="btnD bottombtn">.</button>
+                <button class="btnE bottombtn">=</button>
+            </div>
+        </div>
+    </div>
+    <footer>Copyright © Romulo Milani </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
