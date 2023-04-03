@@ -128,3 +128,11 @@ clear.addEventListener('click', () => {
     operatorP.innerHTML = '';
     pScreenUp.innerHTML = '';
 })
+
+//BACKSPCE BUTTON
+const backspace = document.querySelector('.backspace');
+backspace.addEventListener('click', () => {
+
+    firstP.innerHTML = (firstP.innerHTML).substring(0, firstP.innerHTML.length -1);
+    secondP.innerHTML = (secondP.innerHTML).substring(0, secondP.innerHTML.length-1);
+})
