@@ -54,8 +54,8 @@ numberBtns.forEach(numberBtn => {
             secondNumber = secondP.innerHTML;
 
         } else if (equalsUsed == true) {
-            
-            firstP.innerHTML = '';            
+
+            firstP.innerHTML = '';
             firstP.innerHTML += e.target.innerHTML;
             firstNumber = firstP.innerHTML;
             equalsUsed = false;
@@ -105,13 +105,26 @@ equals.addEventListener('click', function () {
         secondNumber = parseFloat(secondNumber);
 
         let result = operate(operator, firstNumber, secondNumber);
-        pScreenUp.innerHTML +=  ` ${operator} ${secondNumber} = ${result}`;
+        pScreenUp.innerHTML += ` ${operator} ${secondNumber} = ${result}`;
 
         firstNumber = '';
         secondNumber = '';
         operator = '';
-        firstP.innerHTML = result;        
+        firstP.innerHTML = result;
         secondP.innerHTML = '';
         operatorP.innerHTML = '';
     }
+})
+
+//CLEAR BUTTON
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+    firstP.innerHTML = ''
+    secondP.innerHTML = '';
+    operatorP.innerHTML = '';
+    pScreenUp.innerHTML = '';
 })
