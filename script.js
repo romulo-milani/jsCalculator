@@ -135,4 +135,5 @@ backspace.addEventListener('click', () => {
 
     firstP.innerHTML = (firstP.innerHTML).substring(0, firstP.innerHTML.length -1);
     secondP.innerHTML = (secondP.innerHTML).substring(0, secondP.innerHTML.length-1);
+    secondNumber = secondP.innerHTML;
 })
