@@ -41,11 +41,37 @@ div {
     padding: 15px;
 
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
     box-shadow: inset 0 0 10px rgb(37, 37, 37);
     color: white;
     font-size: 20px;
+}
+
+.screenUp {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 20px;
+}
+
+.pScreenUp {
+    font-size: 25px;
+}
+
+.operatorP {
+    font-size: 35px;
+    color: red;
+}
+
+.screenDown {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 40px;
 }
 
 .topBtns {
