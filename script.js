@@ -53,7 +53,14 @@ numberBtns.forEach(numberBtn => {
             secondP.innerHTML += e.target.innerHTML;
             secondNumber = secondP.innerHTML;
 
-        } else {
+        } else if (equalsUsed == true) {
+            
+            firstP.innerHTML = '';            
+            firstP.innerHTML += e.target.innerHTML;
+            firstNumber = firstP.innerHTML;
+            equalsUsed = false;
+
+        } else if (equalsUsed == false) {
             firstP.innerHTML += e.target.innerHTML;
             firstNumber = firstP.innerHTML;
         }
@@ -80,6 +87,10 @@ operatorBtns.forEach(operatorBtn => {
     })
 })
 
+//every time someone presses equals, the calculator shows the result, and erases the screen if the user starts pressing more number.
+//with the variable below, we know if the user pressed the equals button
+let equalsUsed = false;
+
 //EQUALS BUTTON
 const equals = document.querySelector('.btnE');
 equals.addEventListener('click', function () {
@@ -88,16 +99,18 @@ equals.addEventListener('click', function () {
 
     } else {
 
+        equalsUsed = true;
+
         firstNumber = parseFloat(firstNumber);
         secondNumber = parseFloat(secondNumber);
 
         let result = operate(operator, firstNumber, secondNumber);
+        pScreenUp.innerHTML +=  ` ${operator} ${secondNumber} = ${result}`;
 
         firstNumber = '';
         secondNumber = '';
         operator = '';
-        firstP.innerHTML = result;
-        pScreenUp.innerHTML = result;
+        firstP.innerHTML = result;        
         secondP.innerHTML = '';
         operatorP.innerHTML = '';
     }
