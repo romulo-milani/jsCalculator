@@ -28,12 +28,6 @@ function operate(operator, firstNumber, secondNumber) {
     };
 }
 
-//FUNCTION THAT ERASES THE P ELEMENT
-function eraseP() {
-
-}
-
-
 //OPERATION VARIABLES
 let firstNumber = '';
 let secondNumber = '';
@@ -46,7 +40,7 @@ const secondP = document.querySelector('.displaySecondP');
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener('click', (e) => {
-
+        
         if (operator != '') {
 
             firstP.innerHTML = '';
@@ -76,13 +70,37 @@ const screenDown = document.querySelector('.screenDown');
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener('click', (e) => {
-        //copy the text and display it on top of the screen
-        firstNumber = firstP.innerHTML;
-        pScreenUp.innerHTML = firstNumber;
 
-        //Display the selected operator
-        operatorP.innerHTML = e.target.innerHTML;
-        operator = operatorP.innerHTML
+
+        //if user presses the operator button a second time, the calculator makes the operation
+        if (pScreenUp != '' && operatorP.innerHTML != '' && secondP.innerHTML != '') {
+
+            equalsUsed = true;
+
+            firstNumber = parseFloat(firstNumber);
+            secondNumber = parseFloat(secondNumber);
+
+            let result = operate(operator, firstNumber, secondNumber);
+            pScreenUp.innerHTML = ` ${firstNumber} ${operator} ${secondNumber} = ${result}`;
+
+            firstNumber = result;
+            secondNumber = '';
+
+            operatorP.innerHTML = e.target.innerHTML;
+            operator = operatorP.innerHTML
+
+            firstP.innerHTML = result;
+            secondP.innerHTML = '';
+
+        } else {
+            //copy the text and display it on top of the screen
+            firstNumber = firstP.innerHTML;
+            pScreenUp.innerHTML = firstNumber;
+
+            //Display the selected operator
+            operatorP.innerHTML = e.target.innerHTML;
+            operator = operatorP.innerHTML
+        }
 
     })
 })
@@ -133,7 +151,7 @@ clear.addEventListener('click', () => {
 const backspace = document.querySelector('.backspace');
 backspace.addEventListener('click', () => {
 
-    firstP.innerHTML = (firstP.innerHTML).substring(0, firstP.innerHTML.length -1);
-    secondP.innerHTML = (secondP.innerHTML).substring(0, secondP.innerHTML.length-1);
+    firstP.innerHTML = (firstP.innerHTML).substring(0, firstP.innerHTML.length - 1);
+    secondP.innerHTML = (secondP.innerHTML).substring(0, secondP.innerHTML.length - 1);
     secondNumber = secondP.innerHTML;
 })
