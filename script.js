@@ -40,14 +40,15 @@ const secondP = document.querySelector('.displaySecondP');
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener('click', (e) => {
-        
+
+        //starts populating the second variable if the first was already typed by the user
         if (operator != '') {
 
             firstP.innerHTML = '';
             secondP.innerHTML += e.target.innerHTML;
             secondNumber = secondP.innerHTML;
 
-        } else if (equalsUsed == true) {
+        } else if (equalsUsed == true) { //does the operation if the user clicks on the operator again, instead of the equals button
 
             firstP.innerHTML = '';
             firstP.innerHTML += e.target.innerHTML;
