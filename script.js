@@ -22,9 +22,9 @@ function operate(operator, firstNumber, secondNumber) {
     } else if (operator == '-') {
         return subtract(firstNumber, secondNumber);
     } else if (operator == '*') {
-        return multiply(firstNumber, secondNumber);
+        return multiply(firstNumber, secondNumber).toFixed(3);
     } else if (operator == '/') {
-        return divide(firstNumber, secondNumber);
+        return divide(firstNumber, secondNumber).toFixed(3);
     };
 }
 
