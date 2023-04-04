@@ -75,23 +75,34 @@ operatorBtns.forEach(operatorBtn => {
 
         //if user presses the operator button a second time, the calculator makes the operation
         if (pScreenUp != '' && operatorP.innerHTML != '' && secondP.innerHTML != '') {
+            if (operator == '/' && secondNumber == 0) { //can't devide by zero
+                alert("can't devide by zero!");
+                firstNumber = '';
+                secondNumber = '';
+                operator = '';
+                firstP.innerHTML = ''
+                secondP.innerHTML = '';
+                operatorP.innerHTML = '';
+                pScreenUp.innerHTML = '';
+            } else {
+                equalsUsed = true;
 
-            equalsUsed = true;
+                firstNumber = parseFloat(firstNumber);
+                secondNumber = parseFloat(secondNumber);
 
-            firstNumber = parseFloat(firstNumber);
-            secondNumber = parseFloat(secondNumber);
+                let result = operate(operator, firstNumber, secondNumber);
+                pScreenUp.innerHTML = ` ${firstNumber} ${operator} ${secondNumber} = ${result}`;
 
-            let result = operate(operator, firstNumber, secondNumber);
-            pScreenUp.innerHTML = ` ${firstNumber} ${operator} ${secondNumber} = ${result}`;
+                firstNumber = result;
+                secondNumber = '';
 
-            firstNumber = result;
-            secondNumber = '';
+                operatorP.innerHTML = e.target.innerHTML;
+                operator = operatorP.innerHTML
 
-            operatorP.innerHTML = e.target.innerHTML;
-            operator = operatorP.innerHTML
+                firstP.innerHTML = result;
+                secondP.innerHTML = '';
+            }
 
-            firstP.innerHTML = result;
-            secondP.innerHTML = '';
 
         } else {
             //copy the text and display it on top of the screen
@@ -116,6 +127,15 @@ equals.addEventListener('click', function () {
 
     if (firstNumber == '' || secondNumber == '' || operator == '') {
 
+    } else if (operator == '/' && secondNumber == 0) { //can't devide by zero
+        alert("can't devide by zero!");
+        firstNumber = '';
+        secondNumber = '';
+        operator = '';
+        firstP.innerHTML = ''
+        secondP.innerHTML = '';
+        operatorP.innerHTML = '';
+        pScreenUp.innerHTML = '';
     } else {
 
         equalsUsed = true;
