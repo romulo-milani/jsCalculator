@@ -18,9 +18,9 @@ function divide(a, b) {
 //OPERATE FUNCION
 function operate(operator, firstNumber, secondNumber) {
     if (operator == '+') {
-        return add(firstNumber, secondNumber);
+        return add(firstNumber, secondNumber).toFixed(3);
     } else if (operator == '-') {
-        return subtract(firstNumber, secondNumber);
+        return subtract(firstNumber, secondNumber).toFixed(3);
     } else if (operator == '*') {
         return multiply(firstNumber, secondNumber).toFixed(3);
     } else if (operator == '/') {
@@ -71,7 +71,6 @@ const screenDown = document.querySelector('.screenDown');
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener('click', (e) => {
-
 
         //if user presses the operator button a second time, the calculator makes the operation
         if (pScreenUp != '' && operatorP.innerHTML != '' && secondP.innerHTML != '') {
@@ -175,4 +174,15 @@ backspace.addEventListener('click', () => {
     firstP.innerHTML = (firstP.innerHTML).substring(0, firstP.innerHTML.length - 1);
     secondP.innerHTML = (secondP.innerHTML).substring(0, secondP.innerHTML.length - 1);
     secondNumber = secondP.innerHTML;
+})
+
+
+//DECIMALS BUTTON
+const dot = document.querySelector('.btnD');
+dot.addEventListener('click', (e) => {
+    if (secondNumber == '' && operator == '') {
+        firstP.innerHTML += '.';
+    } else if (firstNumber != '' && operator != '') {
+        secondP.innerHTML += '.';
+    }
 })
