@@ -180,9 +180,20 @@ backspace.addEventListener('click', () => {
 //DECIMALS BUTTON
 const dot = document.querySelector('.btnD');
 dot.addEventListener('click', (e) => {
+
     if (secondNumber == '' && operator == '') {
-        firstP.innerHTML += '.';
+        if (firstP.innerHTML.indexOf('.') != -1) {
+            //if the dot already exists, dont do anything
+        } else {
+            firstP.innerHTML += '.';
+        };
+
     } else if (firstNumber != '' && operator != '') {
-        secondP.innerHTML += '.';
+        if (secondP.innerHTML.indexOf('.') != -1) {
+            //if the dot already exists, dont do anything
+        } else {
+            secondP.innerHTML += '.';
+        }
+
     }
 })
